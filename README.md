@@ -6,7 +6,7 @@
 
 <p align="center">
     <a href="https://github.com/nambo/menu-rag/releases">
-        <img alt="Latest release" src="https://img.shields.io/badge/release-0.1.4-blue">
+        <img alt="Latest release" src="https://img.shields.io/badge/release-0.0.4-blue">
     </a>
     <a href="https://www.python.org/">
         <img alt="Made with Python" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?color=purple">
@@ -29,7 +29,7 @@
 
 本项目是天池比赛AFAC2024大赛，获得三等奖的参赛项目代码，也是Data Menu RAG（或称Menu RAG）方案的示例代码。
 
-比赛信息详见： [AFAC2025挑战组-赛题四：智能体赋能的金融多模态报告自动化生成](https://tianchi.aliyun.com/competition/entrance/532354/information) 
+比赛信息详见： <a href="https://tianchi.aliyun.com/competition/entrance/532354/information" target="_blank">AFAC2025挑战组-赛题四：智能体赋能的金融多模态报告自动化生成</a>
 
 参赛队伍：`队伍名字不能为空`                                                 作者：nambo                                             时间：2025-07-30
 
@@ -210,9 +210,9 @@
 
 进入项目根目录，打开 `config.py` 文件，设置 `Milvus`、`阿里百炼平台`、`百度股市通` 相关配置。详见：
 
-- [Milvus](#milvus_config)
-- [阿里云百炼](#bailianconfig)
-- [百度股市通](#gushitong_config)
+- [Milvus](#51-milvus)
+- [阿里云百炼](#52-阿里云百炼)
+- [百度股市通](#53-百度股市通)
 
 #### 2. 执行下述指令
 
@@ -240,9 +240,9 @@ docker logs -f tianchi-report-agent
 
 进入项目根目录，打开 `config.py` 文件，设置 `Milvus`、`阿里百炼平台`、`百度股市通` 相关配置。详见：
 
-- [Milvus](#milvus_config)
-- [阿里云百炼](#bailianconfig)
-- [百度股市通](#gushitong_config)
+- [Milvus](#51-milvus)
+- [阿里云百炼](#52-阿里云百炼)
+- [百度股市通](#53-百度股市通)
 
 #### 2. 运行下述指令
 
@@ -277,42 +277,40 @@ sh run.sh
 
 本项目基于python的langchain框架开发，依赖`Milvus向量数据库`及`qwen3-235b-a22b`模型，推荐使用Linux CentOS7部署（其他Linux发行版本也可以）。
 
-#### 5.1 Milvus {#milvus_config}
+#### 5.1 Milvus
 
 本项目使用了zilliz免费提供的由阿里云托管的Milvus云服务，你可以通过下述步骤完成配置
 
-1. 通过 [阿里云：Zilliz Cloud](https://market.aliyun.com/detail/cmgj00063418?spm=5176.21213303.J_ZGek9Blx07Hclc3Ddt9dg.1.13ab2f3dhVmZoH&scm=20140722.S_market@@????@@cmgj00063418._.ID_market@@????@@cmgj00063418-RL_zillizcloud-LOC_2024SPAllResult-OR_ser-PAR1_213e365517532953279014254efa51-V_4-RE_new10-P0_0-P1_0) 申请免费实例。
-2. 登录 [Zilliz Cloud后台](https://cloud.zilliz.com.cn/o) 新建集群
+1. 通过 <a href="https://market.aliyun.com/detail/cmgj00063418?spm=5176.21213303.J_ZGek9Blx07Hclc3Ddt9dg.1.13ab2f3dhVmZoH&scm=20140722.S_market@@????@@cmgj00063418._.ID_market@@????@@cmgj00063418-RL_zillizcloud-LOC_2024SPAllResult-OR_ser-PAR1_213e365517532953279014254efa51-V_4-RE_new10-P0_0-P1_0" target="_blank">阿里云：Zilliz Cloud</a> 申请免费实例。
+2. 登录 <a href="https://cloud.zilliz.com.cn/orgs" target="_blank">Zilliz Cloud后台</a> 新建集群
 3. 复制集群信息页面中的 `Endpoint` 和  `Token` 到项目配置文件 `config.py` 中的 `zilliz_milvus_url` 、 `zilliz_milvus_token` 、 `zilliz_milvus_db_name`字段，配置完成。
 
 > 1. 提交的比赛代码中已配置可使用的库信息，因资源有限仅可用于于评委组复现使用
 >
-> 2. 你也可以选择私有化部署，具体过程详见：[Milvus官方部署手册](https://milvus.io/docs/zh/install-overview.md)
+> 2. 你也可以选择私有化部署，具体过程详见：<a href="https://milvus.io/docs/zh/install-overview.md" target="_blank">Milvus官方部署手册</a>
 
 
-
-### 5.2 阿里云百炼 {#bailianconfig}
+### 5.2 阿里云百炼
 
 本项目使用的模型为`qwen3-235b-a22b` 及 `text-embedding-v2`，千文系列是由阿里开发的大模型，其中千文3是其最新版本，`235b-a22b` 是当前阿里系列开源版本中参数规模较大的模型。
 
 本项目使用 `阿里百炼平台` 提供的免费额度的API服务，你可以通过下述步骤完成配置
 
-1. 进入 [阿里百炼大模型平台](https://bailian.console.aliyun.com/?utm_source=ai-bot.cn&tab=model#/model-market/detail/qwen3?modelGroup=qwen3) ，登录账号或完成账户注册
-2. 进入 [API-key页面](https://bailian.console.aliyun.com/?utm_source=ai-bot.cn&tab=model#/api-key) 点击 `创建` 创建一个key（若已有可跳过）
+1. 进入 <a href="https://bailian.console.aliyun.com/?utm_source=ai-bot.cn&tab=model#/model-market/detail/qwen3?modelGroup=qwen3" target="_blank">阿里百炼大模型平台</a> ，登录账号或完成账户注册
+2. 进入 <a href="https://bailian.console.aliyun.com/?utm_source=ai-bot.cn&tab=model#/api-key" target="_blank">API-key页面</a> 点击 `创建` 创建一个key（若已有可跳过）
 3. 点击 `查看` 复制apikey，形如：sk-88b073fxxxxxxxxxxxxxxxxxxxxxxx
 4. 打开项目 `confit.py` 配置文件，将刚刚复制的key粘贴为 `DASHSCOPE_API_KEY` 字段值，配置完成。
-
 > 1. 提交的比赛代码中已配置可使用的apikey，因资源有限仅可用于于评委组复现使用
 >
-> 2. 你也可以选择私有化部署，模型下载地址：[Huggingface: Qwen3-235B-A22B](https://huggingface.co/Qwen/Qwen3-235B-A22B)
+> 2. 你也可以选择私有化部署，模型下载地址：<a href="https://huggingface.co/Qwen/Qwen3-235B-A22B" target="_blank">Huggingface: Qwen3-235B-A22B</a>
 
-### 5.3 百度股市通 {#gushitong_config}
+### 5.3 百度股市通
 
 本项目部分股票数据（如：K线、板块等），使用百度股市通提供的公开数据。
 
 你可以通过下述步骤，完成其token配置：
 
-1. 在浏览器（推荐使用谷歌浏览器）打开 [百度股市通搜索接口](https://finance.pae.baidu.com/selfselect/sug?wd=%E5%AE%81%E5%BE%B7%E6%97%B6%E4%BB%A3&skip_login=1&finClientType=pc) ，在页面中点击鼠标右键，选择 `检查`，在弹出的面板中找到 `网络` 或`Network`
+1. 在浏览器（推荐使用谷歌浏览器）打开 <a href="https://finance.pae.baidu.com/selfselect/sug?wd=%E5%AE%81%E5%BE%B7%E6%97%B6%E4%BB%A3&skip_login=1&finClientType=pc" target="_blank">百度股市通搜索接口</a> ，在页面中点击鼠标右键，选择 `检查`，在弹出的面板中找到 `网络` 或`Network`
 2. 刷新页面
 3. 在 `网络`面板中会出现刚刚的请求接口，点击请求。点击`标头`下滑到`请求头`或`Request Header`部分
 4. 找到`cookie`，复制百度token，形如：BAIDUID=3DB0ACF63952AAE8C8195D2A0B6F6A80:FG=1;
