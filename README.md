@@ -18,12 +18,12 @@
 
 <h4 align="center">
     <p>
-        <a href="#section1_framework">架构设计</a> |
-        <a href="#section1_file_tree">目录结构</a> |
-        <a href="#section2_env">开发环境</a> |
-        <a href="#section3_manual">运行指南</a> |
-        <a href="#section5_deploy">本地部署</a> |
-        <a href="#section6_history">迭代过程</a> |
+        <a href="#一架构设计-framework">架构设计</a> |
+        <a href="#二项目目录-filetree">目录结构</a> |
+        <a href="#三开发环境-env">开发环境</a> |
+        <a href="#四运行指南-manual">运行指南</a> |
+        <a href="#五部署-deploy">本地部署</a> |
+        <a href="#六迭代过程-history">迭代过程</a> |
     <p>
 </h4>
 
@@ -38,7 +38,7 @@
 > 如果有需要，可以通过邮件联系我。nambo@foxmail.com
 
 
-## 一、架构设计 {#section1_framework}
+## 一、架构设计 {#framework}
 
 ### 1.1 简介
 
@@ -106,7 +106,7 @@
   <img alt="不同阶段使用token比例" src="./docs/cost2.png" width="300"/>
 </p>
 
-## 二、项目目录 {#section1_file_tree}
+## 二、项目目录 {#filetree}
 ```
 ├── agent/                             # agent实现
 │   │── common/                            # 基础工具
@@ -179,7 +179,7 @@
 
 
 
-## 三、开发环境 {#section2_env}
+## 三、开发环境 {#env}
 
 | 类型     | 名称        | 版本           | 备注 |
 | -------- | ----------- | -------------- | ---- |
@@ -190,7 +190,7 @@
 | 向量数据库 | Milvus | 2.5.x    | 使用zilliz云提供的免费服务 |
 | 大模型 | 千问3 | qwen3-235b-a22b    | 使用百炼提供的免费额度 |
 
-## 四、运行指南 {#section3_manual}
+## 四、运行指南 {#manual}
 
 本项目可以基于Docker或本地化运行，运行前请注意如下事项：
 
@@ -273,7 +273,7 @@ sh run.sh
 >
 > `Macro_Research_Report.docx`为宏观研报。
 
-## 五、部署 {#section5_deploy}
+## 五、部署 {#deploy}
 
 本项目基于python的langchain框架开发，依赖`Milvus向量数据库`及`qwen3-235b-a22b`模型，推荐使用Linux CentOS7部署（其他Linux发行版本也可以）。
 
@@ -351,7 +351,7 @@ python server_stock.py
 > 运行之前，要修改`run.sh`，改为你需要生成的研报主题
 
 
-## 六、迭代过程
+## 六、迭代过程 {#history}
 
 #### v0.1 基于LangGraph的Multi-Agent实现
 
