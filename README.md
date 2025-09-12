@@ -69,7 +69,7 @@
     - **消除语义鸿沟**：通过问题衍生拓展问题语义，通过多角度知识摘要拓展数据语义，再将两者相结合，可以有效的避免语义鸿沟；
     - **避免噪声**：通过相关性检测和知识摘要，可以过滤掉绝大部分噪声干扰。
 
-关于DM-RAG的详细介绍，你可以阅读这篇文章：[Data Menu RAG: 一种基于动态知识摘要的新型检索增强生成框架](https://github.com/nambo/menu-rag/DM_RAG.md)
+关于DM-RAG的详细介绍，你可以阅读这篇文章：[Data Menu RAG: 一种基于动态知识摘要的新型检索增强生成框架](https://github.com/nambo/menu-rag/blob/main/DM_RAG.md)
 
 #### 1.2.2 架构设计
 
